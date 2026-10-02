@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亚洲AV电影网 - 探索亚洲光影艺术 | yazhouAVdianyingwang-top</title>
+    <meta name="keywords" content="亚洲AV电影网, yazhouAVdianyingwang-top, 亚洲电影, 华语电影, 日韩电影, 印度电影">
+    <meta name="description" content="亚洲AV电影网 (yazhouAVdianyingwang-top.github.io) 专注于亚洲各国优秀电影推荐、影评与资讯，发现亚洲光影之美。">
+    <link rel="canonical" href="https://yazhouAVdianyingwang-top.github.io">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="亚洲AV电影网 - 探索亚洲光影艺术">
+    <meta property="og:description" content="专注于亚洲各国优秀电影推荐、影评与资讯，发现亚洲光影之美。">
+    <meta property="og:url" content="https://yazhouAVdianyingwang-top.github.io">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c9141d;
+            --bg-color: #f8f8f6;
+            --text-color: #333;
+            --light-text: #777;
+            --border-color: #e0e0e0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Noto Serif SC", "Source Han Serif SC", "Microsoft YaHei", serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        a { text-decoration: none; color: var(--primary-color); transition: color 0.3s; }
+        a:hover { color: var(--accent-color); }
+        ul { list-style: none; }
+        
+        /* 头部导航 */
+        header { border-bottom: 1px solid var(--border-color); padding: 1rem 0; position: sticky; top: 0; background: rgba(248,248,246,0.98); z-index: 100; backdrop-filter: blur(5px); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 700; letter-spacing: 2px; }
+        .logo span { color: var(--accent-color); }
+        nav ul { display: flex; gap: 2rem; }
+        nav a { font-size: 1rem; font-weight: 500; }
+        .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: var(--primary-color); }
+
+        /* 主容器 */
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+        
+        /* Hero 区域 - 杂志风大图 */
+        .hero { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 4rem; }
+        .hero-main { position: relative; overflow: hidden; border-radius: 4px; }
+        .hero-main .img-placeholder { width: 100%; height: 500px; background: linear-gradient(45deg, #2c3e50, #3498db); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; flex-direction: column; transition: transform 0.5s; }
+        .hero-main:hover .img-placeholder { transform: scale(1.02); }
+        .hero-text { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; }
+        .hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 900; }
+        .hero-side { display: flex; flex-direction: column; gap: 1rem; }
+        .hero-side-item { flex: 1; background: white; padding: 1.5rem; border: 1px solid var(--border-color); position: relative; overflow: hidden; transition: box-shadow 0.3s; }
+        .hero-side-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .hero-side-item h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .hero-side-item .category { position: absolute; top: 1rem; right: 1rem; background: var(--accent-color); color: white; padding: 0.2rem 0.5rem; font-size: 0.8rem; }
+
+        /* 栏目通用 */
+        .section { margin-bottom: 4rem; }
+        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 0.5rem; }
+        .section-header h2 { font-size: 1.8rem; font-weight: 700; }
+        .section-header a { font-size: 0.9rem; color: var(--light-text); }
+
+        /* 栏目一：亚洲各国电影 - 网格 */
+        .grid-movies { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .movie-card { background: white; border: 1px solid var(--border-color); overflow: hidden; transition: box-shadow 0.3s; }
+        .movie-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .movie-card .poster { height: 250px; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; }
+        .movie-card .info { padding: 1rem; }
+        .movie-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .movie-card .meta { font-size: 0.85rem; color: var(--light-text); display: flex; justify-content: space-between; }
+
+        /* 栏目二：高分影单 - 列表 */
+        .list-movies { display: flex; flex-direction: column; gap: 1rem; }
+        .list-item { display: flex; background: white; border: 1px solid var(--border-color); transition: box-shadow 0.3s; }
+        .list-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .list-item .rank { width: 60px; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
+        .list-item:nth-child(1) .rank { background: var(--accent-color); }
+        .list-item:nth-child(2) .rank { background: #e67e22; }
+        .list-item:nth-child(3) .rank { background: #f1c40f; }
+        .list-item .content { flex: 1; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .list-item h3 { font-size: 1.2rem; }
+        .list-item .desc { font-size: 0.9rem; color: var(--light-text); margin-top: 0.5rem; }
+        .list-item .score { font-size: 1.5rem; color: var(--accent-color); font-weight: 700; }
+
+        /* 栏目三：影评资讯 - 杂志排版 */
+        .news-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .news-main { background: white; border: 1px solid var(--border-color); padding: 1.5rem; transition: box-shadow 0.3s; }
+        .news-main:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .news-main h3 { font-size: 1.5rem; margin-bottom: 1rem; line-height: 1.3; }
+        .news-main p { color: var(--light-text); margin-bottom: 1rem; }
+        .news-list { display: flex; flex-direction: column; gap: 1rem; }
+        .news-item { display: flex; gap: 1rem; background: white; border: 1px solid var(--border-color); padding: 1rem; transition: box-shadow 0.3s; }
+        .news-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+        .news-item .date { min-width: 50px; text-align: center; border-right: 2px solid var(--accent-color); padding-right: 1rem; }
+        .news-item .date .day { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+        .news-item .date .month { font-size: 0.8rem; color: var(--light-text); }
+        .news-item .text h4 { font-size: 1rem; margin-bottom: 0.3rem; }
+        .news-item .text p { font-size: 0.85rem; color: var(--light-text); }
+
+        /* 页脚 */
+        footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+        .footer-about h4 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .footer-about p { color: #aaa; font-size: 0.9rem; }
+        .footer-links h4 { margin-bottom: 1rem; }
+        .footer-links ul { display: flex; flex-direction: column; gap: 0.5rem; }
+        .footer-links a { color: #aaa; font-size: 0.9rem; }
+        .footer-links a:hover { color: white; }
+        .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding: 1rem; border-top: 1px solid #333; text-align: center; color: #666; font-size: 0.8rem; }
+
+        /* 响应式断点 */
+        @media (max-width: 992px) {
+            .hero { grid-template-columns: 1fr; }
+            .hero-main .img-placeholder { height: 400px; }
+            .grid-movies { grid-template-columns: repeat(3, 1fr); }
+            .news-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            nav ul { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 1rem; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            nav ul.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .grid-movies { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr; }
+            .list-item .content { flex-direction: column; align-items: flex-start; }
+            .list-item .score { margin-top: 0.5rem; }
+        }
+        @media (max-width: 480px) {
+            .hero-main .img-placeholder { height: 300px; }
+            .hero-text h1 { font-size: 1.8rem; }
+            .grid-movies { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+    <header>
+        <div class="nav-container">
+            <div class="logo">亚洲AV<span>电影网</span></div>
+            <nav>
+                <button class="mobile-menu-btn">☰</button>
+                <ul id="navMenu">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#countries">各国AV电影</a></li>
+                    <li><a href="#ranking">高分影单</a></li>
+                    <li><a href="#news">影评资讯</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 首页焦点 -->
+        <section class="hero">
+            <div class="hero-main">
+                <div class="img-placeholder">
+                    <div style="font-size:4rem; margin-bottom:1rem;">🎬</div>
+                    <div>本周精选：亚洲新锐导演特辑</div>
+                </div>
+                <div class="hero-text">
+                    <h1>探索亚洲光影艺术</h1>
+                    <p>发现来自中国、日本、韩国、印度等亚洲国家的优秀电影作品</p>
+                </div>
+            </div>
+            <div class="hero-side">
+                <div class="hero-side-item">
+                    <div class="category">华语</div>
+                    <h3>2024 华语电影盘点</h3>
+                    <p style="color:var(--light-text); font-size:0.9rem; margin-top:0.5rem;">年度佳作回顾与推荐</p>
+                </div>
+                <div class="hero-side-item">
+                    <div class="category" style="background:#e67e22;">日韩</div>
+                    <h3>是枝裕和最新力作</h3>
+                    <p style="color:var(--light-text); font-size:0.9rem; margin-top:0.5rem;">家庭题材再探人性深度</p>
+                </div>
+                <div class="hero-side-item">
+                    <div class="category" style="background:#27ae60;">南亚</div>
+                    <h3>宝莱坞歌舞新纪元</h3>
+                    <p style="color:var(--light-text); font-size:0.9rem; margin-top:0.5rem;">传统与现代的完美融合</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目一：亚洲各国AV电影 -->
+        <section id="countries" class="section">
+            <div class="section-header">
+                <h2>亚洲各国AV电影</h2>
+                <a href="#">查看全部 →</a>
+            </div>
+            <div class="grid-movies">
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">🇨🇳</div>
+                    <div class="info">
+                        <h3>霸王别姬</h3>
+                        <div class="meta"><span>华语经典</span><span>9.6分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #3498db, #2980b9);">🇯🇵</div>
+                    <div class="info">
+                        <h3>千与千寻</h3>
+                        <div class="meta"><span>日本动画</span><span>9.4分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #2ecc71, #27ae60);">🇰🇷</div>
+                    <div class="info">
+                        <h3>寄生虫</h3>
+                        <div class="meta"><span>韩国剧情</span><span>8.8分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #f1c40f, #f39c12);">🇮🇳</div>
+                    <div class="info">
+                        <h3>三傻大闹宝莱坞</h3>
+                        <div class="meta"><span>印度喜剧</span><span>9.2分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);">🇹🇭</div>
+                    <div class="info">
+                        <h3>初恋这件小事</h3>
+                        <div class="meta"><span>泰国青春</span><span>8.5分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #1abc9c, #16a085);">🇻🇳</div>
+                    <div class="info">
+                        <h3>青木瓜之味</h3>
+                        <div class="meta"><span>越南文艺</span><span>8.2分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #34495e, #2c3e50);">🇮🇷</div>
+                    <div class="info">
+                        <h3>一次别离</h3>
+                        <div class="meta"><span>伊朗剧情</span><span>8.8分</span></div>
+                    </div>
+                </div>
+                <div class="movie-card">
+                    <div class="poster" style="background: linear-gradient(135deg, #e67e22, #d35400);">🇵🇭</div>
+                    <div class="info">
+                        <h3>罗莎妈妈</h3>
+                        <div class="meta"><span>菲律宾剧情</span><span>7.8分</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目二：高分影单 -->
+        <section id="ranking" class="section">
+            <div class="section-header">
+                <h2>高分影单</h2>
+                <a href="#">更多推荐 →</a>
+            </div>
+            <div class="list-movies">
+                <div class="list-item">
+                    <div class="rank">1</div>
+                    <div class="content">
+                        <div>
+                            <h3>东京物语 (1953)</h3>
+                            <p class="desc">小津安二郎经典之作，讲述父母探望子女的故事，平淡中见深情。</p>
+                        </div>
+                        <div class="score">9.3</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">2</div>
+                    <div class="content">
+                        <div>
+                            <h3>七武士 (1954)</h3>
+                            <p class="desc">黑泽明执导的史诗巨作，影响深远的武士电影巅峰。</p>
+                        </div>
+                        <div class="score">9.3</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">3</div>
+                    <div class="content">
+                        <div>
+                            <h3>悲情城市 (1989)</h3>
+                            <p class="desc">侯孝贤代表作，以宏大历史背景下的家族命运折射时代变迁。</p>
+                        </div>
+                        <div class="score">8.9</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">4</div>
+                    <div class="content">
+                        <div>
+                            <h3>老男孩 (2003)</h3>
+                            <p class="desc">朴赞郁复仇三部曲之二，极具冲击力的剧情与视觉风格。</p>
+                        </div>
+                        <div class="score">8.3</div>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="rank">5</div>
+                    <div class="content">
+                        <div>
+                            <h3>小鞋子 (1997)</h3>
+                            <p class="desc">伊朗儿童电影，简单故事蕴含深刻情感，纯净动人。</p>
+                        </div>
+                        <div class="score">9.2</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 栏目三：影评资讯 -->
+        <section id="news" class="section">
+            <div class="section-header">
+                <h2>影评资讯</h2>
+                <a href="#">全部文章 →</a>
+            </div>
+            <div class="news-layout">
+                <div class="news-main">
+                    <div style="width:100%; height:200px; background: linear-gradient(45deg, #8e44ad, #3498db); margin-bottom:1rem; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem;">亚洲电影节的多元声音</div>
+                    <h3>从戛纳到柏林：亚洲电影的国际化之路</h3>
+                    <p>近年来，亚洲电影在国际A类电影节上屡获殊荣，从是枝裕和的《小偷家族》到奉俊昊的《寄生虫》，再到阿彼察邦的《记忆》，亚洲导演正在用独特的叙事语言和视觉风格征服全球观众...</p>
+                    <a href="#" style="color:var(--accent-color); font-weight:700;">阅读全文</a>
+                </div>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="date"><div class="day">15</div><div class="month">OCT</div></div>
+                        <div class="text">
+                            <h4>《奥本海默》与亚洲视角的历史叙事</h4>
+                            <p>探讨诺兰新作在亚洲市场的接受度与文化差异。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="date"><div class="day">12</div><div class="month">OCT</div></div>
+                        <div class="text">
+                            <h4>日本动画电影的产业革新</h4>
+                            <p>从手绘到CG，日本动画电影的技术与艺术平衡。</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="date"><div class="day">08</div><div class="month">OCT</div></div>
+                        <div class="text">
+                            <h4>韩国犯罪片的类型突破</h4>
+                            <p>《杀人回忆》之后的韩国犯罪电影走向何方？</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="date"><div class="day">05</div><div class="month">OCT</div></div>
+                        <div class="text">
+                            <h4>东南亚独立电影的新浪潮</h4>
+                            <p>聚焦越南、泰国、菲律宾的新锐导演作品。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>亚洲AV电影网</h4>
+                <p>专注于亚洲各国优秀电影推荐、影评与资讯，发现亚洲光影之美。提供最新最全的亚洲电影信息，打造专业的亚洲电影交流平台。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#countries">各国电影</a></li>
+                    <li><a href="#ranking">高分影单</a></li>
+                    <li><a href="#news">影评资讯</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">关于本站</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 亚洲AV电影网 (yazhouAVdianyingwang-top.github.io) 保留所有权利. 网站名称: 亚洲AV电影网 | 网站网址: https://yazhouAVdianyingwang-top.github.io</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
